@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline:none; /* визначає стиль контуру: лінія, яка малюється навколо елементів, ПОЗА межами, щоб елемент виділявся*/
+    border:none; /* дозволяють вказати стиль, ширину і колір кордону елемента */
+    text-decoration:none;
+    transition: all .2s linear; /*-переходи дозволяють змінювати значення властивостей плавно, протягом заданого проміжку часу */
+
+}
+
+/* $green:#3CB371; /*Medium sea green*/
+/* $lightgreean:#90EE90; 
+$black:#263238; 
+$white:#F5FFFA; /*mint cream*/
+/* $grey:#C0C0C0; /*silver*/
+/* $yellow:#FFFF00;
+$border:.1rem solid #999; */ 
+
+@mixin grid($val) {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax($val, 1fr));
+    gap:2rem;
+}
+
+html{
+    font-size:62.5%;
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar{
+        width:1rem;
+    }
+
+    &::-webkit-scrollbar-track{
+        background:transparent;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background:	#b3ffc6;
+    }
+}
+
+body{
+    padding-left:15%;
+}
+
+section {
+    padding:3em 12rem;
+}
+
+.header{
+    position:fixed;
+    top:0; left:0;
+    z-index: 1000; /*Властивість z-index визначає порядок стека елемента. number(1000) - елемент буде найпершим*/
+    background:	#b3ffc6;
+    width:22rem;
+    height:100%;
+    padding: 3rem;
+    text-transform: capitalize; /*, uppercase, lowercase - властивість CSS, яка визначає, як писати текст елемента з великої літери. */
+    
+    .logo{
+        font-size: 2.5rem;
+        color:#009926;
+        i{
+            color:#004d13;
+        }
+    }
+
+    .navbar{
+        padding:25% 0;
+
+        a{
+            display:block;
+            font-size: 2rem;
+            margin:1.5rem 0;
+            color:#009926;
+
+            i{
+                color:#004d13;
+                padding-right: .5 rem;
+            }
+
+            &:hover{
+                font-weight: 550;
+            }
+        }
+    }
+
+    .share{
+        text-align:center;
+        padding-top:27rem;
+        a{
+            height:5rem;
+            width:5rem;
+            line-height: 5rem;
+            font-size: 2.2rem;
+            background-color: transparent;
+            color:#000066;
+        }
+    }
+}
+
+/* #menu-btn{
+    position:fixed;
+    top:1rem; right:2rem;
+    height:5rem;
+    width:5rem;
+    line-height:5rem;
+    font-size:2.5rem;
+    background: #b3ffc6;
+    color:#F5FFFA;
+    cursor: pointer;
+    text-align:center;
+    z-index: 10000;
+    display:content;
+
+    &.fa-times{
+        background: #b3ffc6;
+        color:#F5FFFA;
+    }
+} */
+
+.home{
+    display: flex;
+    align-items: center;
+    flex-wrap:wrap;
+    gap:2rem;
+
+    .image{
+        flex:1 1 40 rem;
+
+        img{
+            width:90%;
+        }
+    }
+
+    .content{
+        width:90%;
+
+        h3{
+            color:#004d13;
+            font-size: 2.8rem;
+            padding: 2.5rem;
+        }
+        p{
+            font-size: 2rem;
+            padding:1.2rem;
+        }
+    }
+}
+
+.adjectives, .adverbs, .nouns {
+    display: flex;
+    align-items: center;
+    flex-wrap:wrap;
+    gap:2rem;
+    
+    .chapters{
+        p{
+            font-size: 1.9rem;
+            margin: 2.5rem;
+        }
+    }
+
+
+    .content{
+        width:80%;
+        h3{
+            color:#004d13;
+            font-size: 2.8rem;
+            padding: 2.5rem;
+        }
+        
+        h4{
+            color:#00331a;
+            font-size: 2.2rem;
+            padding: 1.8rem;
+        }
+        .list1{
+            font-size: 2rem;
+            padding-left: 8rem;
+        }
+        .list2{
+            font-size: 2rem;
+            padding-left: 8rem;
+        }
+
+        span{
+            font-size: 2rem;
+            font-style: italic;
+            padding:1.2rem;
+        }
+
+        p{
+            font-size: 2rem;
+            padding:1.2rem;
+        }
+
+        .table1{
+            th, td {
+                border: 1px solid black;
+                border-style:ridge;
+                padding:2px;
+                text-align:center;
+                font-size: 2rem;
+            }
+        }
+        .table2{
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 80%;
+            padding:2px;
+            text-align:center;
+            font-size: 2rem;
+            background-color: #ffffe6;
+            
+            td:nth-child(even){
+                background-color: 	#f2ffe5;
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            tr{
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th{
+                background-color:#C0C0C0;
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        }
+
+    }
+}
+
+#footer{
+    background: #e6ffe6;
+    p{
+        text-align:center;
+        color:#009926;
+        font-size:1.2rem;    
+        span{
+            color:#004d13;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+@media (max-width:2000){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width:768){
+    body{
+        padding-left: 0;
+    }
+
+    #menu-btn{
+        display: block;
+    }
+
+    .header{
+        left:-110%;
+        
+        &active{
+            left:0;
+            box-shadow: 0 0 0 100vw rgba(0, 0, 0, .7);
+            width:35rem;
+        }
+    }
+    .home .content h3{
+        font-size:2 rem;
+    }
+}
+
+@media (max-width:450){
+    html{
+        font-size: 50%;
+    }
+} */
+
